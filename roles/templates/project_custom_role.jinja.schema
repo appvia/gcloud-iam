@@ -1,0 +1,34 @@
+info:
+  title: Cloud IAM Project Level Custom Roles
+  description: Creates a custom role under the gcloud default project.
+
+imports:
+  - path: project_custom_role.jinja
+
+properties:
+  title:
+    type: string
+    default: "\"\""
+    description: The title of the custom role.
+
+  description:
+    type: string
+    default: "\"\""
+    description: A description of the custom role.
+
+  stage:
+    type: string
+    default: ALPHA
+    description: The current launch stage of the custom role.
+    enum:
+     - ALPHA
+     - BETA
+     - GA
+     - DEPRECATED
+     - DISABLED
+     - EAP
+
+  includedPermissions:
+    type: array
+    default: []
+    description: The permissions that this custom role includes.
