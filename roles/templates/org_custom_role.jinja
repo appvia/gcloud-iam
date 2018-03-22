@@ -1,0 +1,16 @@
+# Custom org role definition template
+#
+# Allows you to use this to define the included permissions
+# to create the customised organisation roles
+#
+resources:
+- name: custom-role
+	type: gcp-types/iam-v1:organizations.roles
+	properties:
+  	parent: organizations/{{ properties["organizationId"] }}
+    roleId: {{ properties["roleId"] }}
+    role:
+      title: {{ properties["title"] }}
+      description: {{ properties["description"] }}
+      stage: {{ properties["stage"] }}
+      includedPermissions: {{ properties["includedPermissions"] }}

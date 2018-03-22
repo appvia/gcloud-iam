@@ -1,0 +1,20 @@
+# A sample custom org role definition
+# using a template to populate the properties
+#
+# Define your properties and import the template you want to use
+# using the property values, which will be used in the template
+#
+imports:
+- path: templates/org_custom_role.jinja
+
+resources:
+- name: custom-role
+  type: templates/org_custom_role.jinja
+  properties:
+    organizationId:
+    roleId: aCustomRole
+    title: My Amazing Title
+    description: My Amazing Description
+    includedPermissions:
+    - iam.roles.get
+    - iam.roles.list
